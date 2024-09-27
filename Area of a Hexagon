@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+
+// import org.junit.jupiter.api.Test;
+
+public class Main {
+  public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+
+                    // Prompt the user to enter the side length of the hexagon
+                    System.out.print("Enter the side: ");
+                    double side = input.nextDouble();
+
+                    // Calculate the area using the formula
+                    double area = (6 * Math.pow(side, 2)) / (4 * Math.tan(Math.PI / 6));
+
+                    // Display the area of the hexagon
+                    System.out.printf("The area of the hexagon is %.2f\n", area);
+                }
+            }

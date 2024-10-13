@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+
+// import org.junit.jupiter.api.Test;
+
+public class Main {
+  public static void main(String[] args) {
+
+     // Define the conversion factor
+            final double CONVERSION_FACTOR = 1.609;
+
+            // Print the table header
+            System.out.printf("%-15s %s%n", "Miles", "Kilometers");
+            System.out.println("-------------------------------");
+
+            // Loop from 1 to 10 to calculate and display the conversions
+            for (int miles = 1; miles <= 10; miles++) {
+                double kilometers = miles * CONVERSION_FACTOR;
+                System.out.printf("%-15d %.3f%n", miles, kilometers);
+            }
+        }
+    }

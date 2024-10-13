@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+
+// import org.junit.jupiter.api.Test;
+
+public class Main {
+  public static void main(String[] args) {
+
+    double initialTuition = 10000; // Current tuition
+    double annualIncreaseRate = 0.05; // 5% increase
+    int years = 10; // Number of years to project
+    double tuitionInTenYears = initialTuition;
+
+    // Calculate tuition after ten years
+    for (int i = 0; i < years; i++) {
+        tuitionInTenYears *= (1 + annualIncreaseRate);
+    }
+
+    // Calculate total cost for four years of tuition after the tenth year
+    double totalCostForFourYears = tuitionInTenYears * 4;
+
+    // Display results
+    System.out.printf("Tuition in ten years: $%.2f%n", tuitionInTenYears);
+    System.out.printf("Total cost for four years' tuition after the tenth year: $%.2f%n", totalCostForFourYears);
+            }
+        }

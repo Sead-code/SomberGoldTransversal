@@ -1,1 +1,21 @@
-
+import java.util.Scanner;
+public class Main {
+    // Method to compute the sum of the digits in an integer
+    public static int sumDigits(long n) {
+        int sum = 0;
+        // Loop to extract each digit and add it to the sum
+        while (n != 0) {
+            sum += n % 10;  // Add the last digit to the sum
+            n /= 10;        // Remove the last digit
+        }
+        return sum;
+    }
+    public static void main(String[] args) {
+        // Test cases to verify the method
+        System.out.println("Sum of digits in 356: " + sumDigits(356));  // Expected: 14
+        System.out.println("Sum of digits in 12345: " + sumDigits(12345)); // Expected: 15
+        System.out.println("Sum of digits in 987654321: " + sumDigits(987654321)); // Expected: 45
+        System.out.println("Sum of digits in 0: " + sumDigits(0)); // Expected: 0
+        System.out.println("Sum of digits in -567: " + sumDigits(-567)); // Expected: 18 (handles negative input by ignoring sign)
+    }
+}

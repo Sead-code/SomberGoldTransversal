@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+
+            // Create an array to store the input numbers
+            int[] numbers = new int[10];
+
+            // Prompt user to enter 10 numbers
+            System.out.print("Enter ten numbers: ");
+            for (int i = 0; i < numbers.length; i++) {
+                numbers[i] = input.nextInt();
+            }
+
+            // Call the eliminateDuplicates method
+            int[] distinctNumbers = eliminateDuplicates(numbers);
+
+            // Display the distinct numbers
+            System.out.print("The distinct numbers are: ");
+            for (int num : distinctNumbers) {
+                if (num != 0) { // ignore default zeros in the result array
+                    System.out.print(num + " ");
+                }
+            }
+        }
+
+        // Method to eliminate duplicates from the array
+        public static int[] eliminateDuplicates(int[] list) {
+            int[] temp = new int[list.length];
+            int count = 0;
+
+            for (int i = 0; i < list.length; i++) {
+                boolean isDuplicate = false;
+
+                // Check if list[i] is already in temp array
+                for (int j = 0; j < count; j++) {
+                    if (list[i] == temp[j]) {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                // If list[i] is not a duplicate, add it to temp array
+                if (!isDuplicate) {
+                    temp[count] = list[i];
+                    count++;
+                }
+            }
+
+            // Create a new array to store only the distinct numbers
+            int[] result = new int[count];
+            System.arraycopy(temp, 0, result, 0, count);
+
+            return result;
+        }
+    }
